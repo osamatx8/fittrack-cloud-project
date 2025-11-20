@@ -6,6 +6,8 @@
 ### Website: https://fittrack.world  
 ### Global IP Address: 98.70.96.132  
 
+### Video Explainer: https://drive.google.com/drive/folders/18RGEf_9KaViV6YYKx9VS3KcjNaNREnTn?usp=share_link
+
 ## Overview
 
 FitTrack is a cloud-based fitness tracking website designed to help users log workouts, calculate training volume, and access fitness resources from anywhere.  
