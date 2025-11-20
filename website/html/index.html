@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FitTrack – Cloud Fitness Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
+        header {
+            background: linear-gradient(90deg, #5c2da8, #8b5cf6);
+            padding: 25px;
+            color: white;
+            text-align: center;
+        }
+        nav { background: #eee; padding: 10px; text-align: center; }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #5c2da8;
+            font-weight: bold;
+        }
+        main { max-width: 1000px; margin: 25px auto; padding: 0 15px 30px; }
+        section {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        h2 { color: #5c2da8; margin-top: 0; }
+        .highlight { color: #4b5563; }
+        .features { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px; }
+        .feature-card {
+            flex: 1 1 230px;
+            background: #f9f9ff;
+            border-radius: 8px;
+            padding: 12px 15px;
+            border-left: 4px solid #5c2da8;
+            font-size: 0.95rem;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #ddd;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Welcome to FitTrack</h1>
+    <p>Your cloud-powered fitness journey starts here.<br>
+       Created by Muhammad Osama Tariq – Student ID: 35909419<br>
+       Public IP: 98.70.96.132
+    </p>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/workout-log.php">Workout Log</a>
+    <a href="/video-search.php">Videos</a>
+    <a href="/about.html">About</a>
+    <a href="/license.html">License</a>
+</nav>
+
+<main>
+
+    <!-- BEGIN MAIN CONTENT SECTIONS (unchanged from previous version) -->
+    <section>
+        <h2>Start Your Fitness Journey</h2>
+        <p class="highlight">
+            FitTrack is a cloud-based platform that helps you stay consistent with your training.
+            Log your workouts, track your progress, and stay motivated—anywhere, anytime.
+        </p>
+
+        <div class="features">
+            <div class="feature-card">
+                <strong>Workout Logs</strong><br>
+                Track your exercises, reps, and weights over time.
+            </div>
+            <div class="feature-card">
+                <strong>Fitness Tools</strong><br>
+                Use the workout volume calculator to set goals and push progress.
+            </div>
+            <div class="feature-card">
+                <strong>Training Videos</strong><br>
+                Access curated YouTube search to learn new exercises.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Motivation Corner</h2>
+        <p class="highlight">A little motivation goes a long way.</p>
+
+        <div class="quote-box">
+            <div id="quote-text" class="quote-text">
+                “The body achieves what the mind believes.”
+            </div>
+            <div id="quote-author" class="quote-author">
+                – Unknown
+            </div>
+            <button class="quote-btn" onclick="newQuote()">New Quote</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>Workout Volume Calculator</h2>
+        <p class="highlight">
+            Calculate total training volume and use it to plan progressive overload.
+        </p>
+
+        <div class="calculator">
+            <label>Sets: </label><input type="number" id="sets">
+            <label>Reps: </label><input type="number" id="reps">
+            <label>Weight (kg): </label><input type="number" id="weight">
+            <button onclick="calcVolume()">Calculate</button>
+            <p id="result"></p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © 2025 Muhammad Osama Tariq | ICT171 Cloud Project | Licensed under CC BY 4.0
+</footer>
+
+<script>
+    function calcVolume() {
+        let sets = document.getElementById('sets').value;
+        let reps = document.getElementById('reps').value;
+        let weight = document.getElementById('weight').value;
+
+        if (sets && reps && weight) {
+            let volume = sets * reps * weight;
+            document.getElementById('result').innerHTML =
+                "<b>Total Volume:</b> " + volume + " kg";
+        } else {
+            document.getElementById('result').innerHTML = "Please enter all values.";
+        }
+    }
+
+    const quotes = [
+        { text: "The body achieves what the mind believes.", author: "Unknown" },
+        { text: "Consistency beats intensity.", author: "Unknown" },
+        { text: "Discipline is choosing what you want most.", author: "Abraham Lincoln" },
+        { text: "Small steps every day lead to big results.", author: "Unknown" }
+    ];
+
+    function newQuote() {
+        const random = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById("quote-text").innerText = "“" + random.text + "”";
+        document.getElementById("quote-author").innerText = "– " + random.author;
+    }
+</script>
+
+</body>
+</html>
